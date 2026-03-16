@@ -20,3 +20,4 @@ Console.WriteLine("Hello David");
 
 //New class
 Console.WriteLine("NEW CLASS");
+//float// decimal double
