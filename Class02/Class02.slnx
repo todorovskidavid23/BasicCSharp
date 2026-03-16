@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="Class02.DataEntry/Class02.DataEntry.csproj" Id="36dd61ac-9053-4210-8a4e-37b4eeea476e" />
   <Project Path="Class02.DataTypes/Class02.DataTypes.csproj" />
+  <Project Path="Class02.Exercises/Class02.Exercises.csproj" />
+  <Project Path="Class02.Operators/Class02.Operators.csproj" />
 </Solution>

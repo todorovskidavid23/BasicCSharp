@@ -58,10 +58,10 @@ isSunny = false;
 
 #endregion
 
-
 #region Check Data Type
 
 Console.WriteLine(isSunny.GetType());
 //System.Boolean
 
 #endregion
+
