@@ -17,3 +17,6 @@ Console.WriteLine("David");
 
 Console.WriteLine("*********");
 Console.WriteLine("Hello David");
+
+//New class
+Console.WriteLine("NEW CLASS");
