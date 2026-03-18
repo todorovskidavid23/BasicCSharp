@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Class03.Arrays/Class03.Arrays.csproj" />
+  <Project Path="Class03.Loops/Class03.Loops.csproj" />
+  <Project Path="Exercises/Exercises.csproj" />
+</Solution>
