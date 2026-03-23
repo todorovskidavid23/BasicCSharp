@@ -2,6 +2,8 @@
 
 //e tip// date time e class ili vo nas slucaj e STRUKTURA ama e slicno na klasa;
 //Creating an empty date time;
+using System.Globalization;
+
 DateTime date = new DateTime();
 Console.WriteLine(date);
 
@@ -46,7 +48,7 @@ Console.WriteLine(today.Month);
 //
 
 string dateFormat1 = today.ToString("MM/dd/yyyy");//shablon pattern kako da go generira datumot
-string dateFomrat2 = today.ToString("dddd, dd MMMM yyyy");
+string dateFomrat2 = today.ToString("dddd, dd MMMM yyyy",CultureInfo.GetCultureInfo("en-US"));
 Console.WriteLine(dateFormat1);
 Console.WriteLine(dateFomrat2);
 
