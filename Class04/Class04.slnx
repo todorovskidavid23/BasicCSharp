@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="Class04.DateTime/Class04.DateTime.csproj" Id="a233664c-857b-4a67-bf46-6ef2bd7fe58a" />
   <Project Path="Class04.Methods/Class04.Methods.csproj" />
+  <Project Path="Class04.Strings/Class04.Strings.csproj" Id="fd8efd2b-de9c-4154-aa63-ae8a0198af41" />
 </Solution>
