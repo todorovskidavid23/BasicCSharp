@@ -22,3 +22,5 @@ Console.WriteLine("Hello David");
 Console.WriteLine("NEW CLASS");
 //float// decimal double
 //se optovaruva aplijacijata SEDC
+
+Console.WriteLine("Hello from Macbook")

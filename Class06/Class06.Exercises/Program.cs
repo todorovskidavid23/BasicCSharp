@@ -109,92 +109,92 @@ bool UserInterface()
 //se dodeka mi vrakja false me drzi vo loop
 
 #endregion
-
-
-else if (choice == "2")
-{
-    Console.Write("Enter new ID: ");
-    int newId;
-    while (!int.TryParse(Console.ReadLine(), out newId))
-    {
-        Console.Write("Please enter a valid integer ID: ");
-    }
-
-    Console.Write("Enter new Username: ");
-    string newUsername = Console.ReadLine();
-
-    Console.Write("Enter new Password: ");
-    string newPassword = Console.ReadLine();
-
-    bool usernameExists = false;
-    foreach (var user in users)
-    {
-        if (user.Username == newUsername)
-        {
-            usernameExists = true;
-            break;
-        }
-    }
-
-    if (usernameExists)
-    {
-        Console.WriteLine("Error: There is already a user called like that.");
-    }
-    else
-    {
-        User[] newUsersArray = new User[users.Length + 1];
-        for (int i = 0; i < users.Length; i++)
-            newUsersArray[i] = users[i];
-
-        newUsersArray[newUsersArray.Length - 1] = new User(newId, newUsername, newPassword, new string[] { });
-        users = newUsersArray;
-
-        Console.WriteLine("Registration complete! Users:");
-        foreach (var user in users)
-        {
-            Console.WriteLine($"{user.Id} {user.Username}");
-        }
-    }
-}
-
-
-
-
-//novo so resize
-else if (choice == "2")
-{
-    Console.Write("Enter ID: ");
-    int id = int.Parse(Console.ReadLine());
-    Console.Write("Enter Username: ");
-    string username = Console.ReadLine();
-    Console.Write("Enter Password: ");
-    string password = Console.ReadLine();
-
-    // Проверка дали корисничкото име веќе постои
-    bool exists = false;
-    foreach (var user in users)
-    {
-        if (user.Username == username)
-        {
-            exists = true;
-            break;
-        }
-    }
-
-    if (exists)
-    {
-        Console.WriteLine("Error: A user with this username already exists.");
-    }
-    else
-    {
-        // Додавање на нов корисник во массивот
-        Array.Resize(ref users, users.Length + 1);
-        users[users.Length - 1] = new User(id, username, password, new string[] { });
-
-        Console.WriteLine("Registration complete! Users:");
-        foreach (var user in users)
-        {
-            Console.WriteLine($"{user.Id} {user.Username}");
-        }
-    }
-}
+//New comment
+//
+// else if (choice == "2")
+// {
+//     Console.Write("Enter new ID: ");
+//     int newId;
+//     while (!int.TryParse(Console.ReadLine(), out newId))
+//     {
+//         Console.Write("Please enter a valid integer ID: ");
+//     }
+//
+//     Console.Write("Enter new Username: ");
+//     string newUsername = Console.ReadLine();
+//
+//     Console.Write("Enter new Password: ");
+//     string newPassword = Console.ReadLine();
+//
+//     bool usernameExists = false;
+//     foreach (var user in users)
+//     {
+//         if (user.Username == newUsername)
+//         {
+//             usernameExists = true;
+//             break;
+//         }
+//     }
+//
+//     if (usernameExists)
+//     {
+//         Console.WriteLine("Error: There is already a user called like that.");
+//     }
+//     else
+//     {
+//         User[] newUsersArray = new User[users.Length + 1];
+//         for (int i = 0; i < users.Length; i++)
+//             newUsersArray[i] = users[i];
+//
+//         newUsersArray[newUsersArray.Length - 1] = new User(newId, newUsername, newPassword, new string[] { });
+//         users = newUsersArray;
+//
+//         Console.WriteLine("Registration complete! Users:");
+//         foreach (var user in users)
+//         {
+//             Console.WriteLine($"{user.Id} {user.Username}");
+//         }
+//     }
+// }
+//
+//
+//
+//
+// //novo so resize
+// else if (choice == "2")
+// {
+//     Console.Write("Enter ID: ");
+//     int id = int.Parse(Console.ReadLine());
+//     Console.Write("Enter Username: ");
+//     string username = Console.ReadLine();
+//     Console.Write("Enter Password: ");
+//     string password = Console.ReadLine();
+//
+//     // Проверка дали корисничкото име веќе постои
+//     bool exists = false;
+//     foreach (var user in users)
+//     {
+//         if (user.Username == username)
+//         {
+//             exists = true;
+//             break;
+//         }
+//     }
+//
+//     if (exists)
+//     {
+//         Console.WriteLine("Error: A user with this username already exists.");
+//     }
+//     else
+//     {
+//         // Додавање на нов корисник во массивот
+//         Array.Resize(ref users, users.Length + 1);
+//         users[users.Length - 1] = new User(id, username, password, new string[] { });
+//
+//         Console.WriteLine("Registration complete! Users:");
+//         foreach (var user in users)
+//         {
+//             Console.WriteLine($"{user.Id} {user.Username}");
+//         }
+//     }
+// }
