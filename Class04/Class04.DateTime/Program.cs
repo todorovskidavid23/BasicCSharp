@@ -52,6 +52,8 @@ string dateFomrat2 = today.ToString("dddd, dd MMMM yyyy",CultureInfo.GetCultureI
 Console.WriteLine(dateFormat1);
 Console.WriteLine(dateFomrat2);
 
+//do 0: navaka imame fomatiranje na 
+string dateFomrat3 = string.Format("Today is {0:MM/dd/yy}, {0:dddd}", today);
 
 
 

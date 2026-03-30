@@ -4,7 +4,7 @@
 
 using Class06.Task2;
 
-User[] users = new User[]
+User[] users = new User[]//referenten tip koga ne postoi nesto moze da vrakjame null
 {
     new User(1,"todorovskidavid","test123",new string[]{"Hello David!","How are you"}),
     new User(2, "greggreg", "password123", new string[] { "Hi Greg!", "How are you" }),
@@ -53,13 +53,21 @@ while (true)
     }else if (choice == "2")
     {
         Console.Write("Enter ID: ");
-        int id = int.Parse(Console.ReadLine());
+        int newId = int.Parse(Console.ReadLine());
         Console.Write("Enter Username: ");
-        string username = Console.ReadLine();
+        string newUsername = Console.ReadLine();
         Console.Write("Enter Password: ");
-        string password = Console.ReadLine();
+        string newPassword = Console.ReadLine();
 
-
+        bool usernameExists = false;
+        foreach (var user in users)
+        {
+            if (user.Username == newUsername)
+            {
+                usernameExists = true;
+                break;
+            }
+        }
 
 
 

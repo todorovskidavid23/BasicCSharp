@@ -9,14 +9,15 @@ namespace Class06.Task2
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string[] Messages { get; set; }
+        public string[] Messages { get; set; }//niza od messages
 
         public User(int id, string username, string password, string[] messages)
         {
             Id = id;
             Username = username;
             Password = password;
-            Messages = messages;
+            //Messages = messages;
+            Messages = messages ?? new string[0];
         }
     }
 }

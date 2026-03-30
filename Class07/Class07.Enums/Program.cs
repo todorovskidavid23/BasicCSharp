@@ -3,6 +3,7 @@
 
 
 using Class07.Enums.Enums;
+using Class07.MathLibrary;
 
 Console.WriteLine(DaysOfWeek.Monday);
 
@@ -27,3 +28,5 @@ if (input == DaysOfWeek.Saturday.ToString() || input == DaysOfWeek.Sunday.ToStri
 }
 
 //ToString so ConvertTo ILI Parse ili Cast
+
+MathOperations.Sum(10, 20); 
