@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="Class07.Constructors/Class07.Inheritance.csproj" />
   <Project Path="Class07.Enums/Class07.Enums.csproj" />
+  <Project Path="Class07.Exercises/Class07.Exercises.csproj" />
   <Project Path="Class07.MathLibrary/Class07.MathLibrary.csproj" />
   <Project Path="Class07.Operations/Class07.Operations.csproj" />
 </Solution>
