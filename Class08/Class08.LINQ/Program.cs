@@ -66,13 +66,15 @@ foreach (var sub in frankSubjects)
 
 //a e anonymous
 var customSelection = students
-    .Where(x => x.FirstName == "Carol")
+    .Where(x => x.FirstName == "Carol")//ako stavime nesto sto nema togas koristime FirstOrDefault() za da ne pukne exeption
     .Select(x => new
     {
         FullName = $"{x.FirstName} {x.LastName}",
         //Subjects = x.Subjects//Nashe ime=x.Subjects
         x.Subjects
-    }).First();//anonimen objekt
+    }).FirstOrDefault();//anonimen objekt//null e default// Queryto da ne ni pukne da si KORISIME FirstOrDefault()
+//SingleOrDefault() koga sme sigurni deka ima samo edno primer da filtrirame fo Id
+
 
 Console.WriteLine(customSelection.FullName);
 foreach (var sub in customSelection.Subjects)
