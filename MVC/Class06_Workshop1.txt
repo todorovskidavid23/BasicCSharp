@@ -1,0 +1,125 @@
+Arhitektura i Patterni
+Aplikacijava ni treba pravilno da fun 
+app ima povekje funkionalsnoti
+BIZNIS LOGIKA
+Repository PATTERN potrebno za samata arhitektura 
+
+Na web api kje se donaucat!
+
+ZA da se izgradi edna aplikacija NE E DOBRO KONECNO RESENIE
+Arhitektura ni treba da ne ni bide izmesano
+Primer zoso se gradi: isto kako kukja pred da pocneme ni treba arhitekt i ovde ARHITEKT da bide stabilna app, da ima da se anze koja soba kja e koja classa kade
+zosto se korsiti
+plan na edna kukja
+stabilna citliva da moze da dodavame funkcionalnosti, treba da bide pravilno napisan so pomos na arhitektura
+
+InMemory  baza znaeme
+ako go pravime do sega kje bide krslivo kje uscime ENTITY FRAMEWORK odnovo kucanje na app
+
+koja sakame baza da ja uklucime
+microsoft SQL so EF ,
+MongoDB treba dtuga config treba nova implementacija na CRUD metodite 
+REPOSITORY so dependencies ako treba MsSQL,static baza, MongoDB sve vo Program.cs
+mozsnot da vidime deka vo sekoj moment mozeme da smenime toa sto se bara
+vo eden settings se menja bazata ili servisite
+
+//To Do aplikacija 
+//mala app da si ja prositime nie
+
+//Architecture 
+
+Diagram treba da se koristi za kreiranje na web app so pomos na arhitektura se pravi planski
+povekje tipovi na arh
+N-Tier Architecture.
+se sostoi od 3 sloja
+DataAccess
+BussinessLayes
+Presentation Layer
+
+
+razlika so MVC or arhitektura do MVC
+imame samo eden proekt podelen po folderi i funkcionalsnoti ne moze da si koristat view sto domain
+
+Ova e za povekje proekti
+3tier sekoj sloj vklucuvame class library citlivo koe lirary za sto sluzi
+
+Prviot
+Data Access Layer se naogja domain i povrzuvanje so baza cla komunikacija so baza imame SAMO DOMAINKSSIOT MODEL BEZ DTO
+i dopolnitelno Enums+
+imame i DatabaseAccess Repositority ni e klucen del za komunikacija so baza implemetnacijasta so EF mongoDb, samo vo nego se implementira komunikacija do rirektna baza i CRUD OPERACII
+sve sto e so baza site CRUD operacii ima vo baza novo class libraary samo za baza STRIKTNO SAMO ZA BAZA
+ORM Context se izuuca so EF
+
+vtoro
+Biznis layer
+se deli na pomali delcinja
+glavnata biznis logika na cela web strana
+Services implekentacija
+Helpers dopolnitelni klasi
+Mappers sekogas mapperi se izdvocuvaat od service i controller vo poseben proekt metoda za mapiranje i se povikuva vo services..
+businees layer DTO model, ove pretezno pravime mappiranje na SEKOE DTO I VIEW MODL
+DATAACCESS LAYER DO BUSINESS LOGIC LAYER
+buznis da komuncira so Presentaciskiot layer
+
+treto
+Presentation layer
+se do sea sto imavme
+Controlleri
+za prikazuvanje na samiot korisnik
+CEl del spagja na layer na edna arhitektura
+
++++++presentaton ide do serives pa do repository+++++
+korisnik se najavuva se pikavuza vo Vire forma klika Login
+view ide vo controller seha controller odlucuva sto da praavi arh vika pingaj do servies
+povikaj biznis logika odnosno servisot za login
+ide do Business logika vo services ssi se izvrsuva logika AMA pred da ide mora da go kontaktira REPOSITORITY toa ni e e glavna CRUD OPERACII
+SERVIEOT EDNA PO EDNA GI VIKA CRUD OPERATII PREKU REPOSITORY
+samo rezultat dava vo servides ZASTITA OD MVC PATTERN view cotnroller model dopolnitelna zastita, MODELOT 
+bezbednsot, citliv kod ,razdelenkod za sekoj sto kje go cita,prifaten od site programeri
+NAJKORISTENI ARHITEKTURI
+
+DATA SO BUSNIS I BIZNIS SO PREZ
+iposle
+PREZ SO BIZNIS I SO DATA
+
+
+///ONION ARHITEKTURA
+razlicna od ntier se se zasova na zavisnosti ne odime se zapocnuva od DOMAINSKI MODEL
+Arhitektura zasnovaana na onion deka vo ntier ni e  Domain i dataaccess 
+od model vo repo 
+
+
+//MNOGU VAZNI SE PATTERNI
+DESIGN PATTERNI
+za resavnaje so organizacija na databaza
+cela logika za databaza t.e. 
+organizacija na komunkacijata so baza
+so pomosn na reposotroty kako da se zima podatoci i kaok da bide konfikuirara ,
+koja table se kreira, sto se foreign keyi itn, + s=vo repo pattern upotreba na interfaces
+vo repo e zadolzitelno interface, vo nego GLACEN INTERFACE genericki i se staveni CRUD operaciite
+da se menuva baza
+
+metoda sto kreira instanci od request ADDTRANSIENT si kreira kova instanca od IOrderSevice interface i servisot so implelemtacijata
+HTTP POST REQUEST add transient
+
+TOJ CONTROLLER I SITE OSTNATI 10 kje se zimaat od noviot services
+Dipenenie Injections
+
+AddTransinet ovde ima za sekoe posebno, ZA SERVICES
+AddScope se pravi istanca za site requsesti zaedno ako ima http get imame eden za site http
+za eden htto
+ZA POVICI OD BAZA
+AddSingleton ima edna instanca za cel aplikacija istata instanca NAJBRZO ama ne si ZASTITEN NE SI BEZBDEDEN
+
+
+
+
+/////////////////////////////////////////////////////////
+
+TO DO APPLICATION
+
+1.DataAccess sloj Domanksi Modeli i Repository
+Domainski modeli Tablei  i Repository e celata komunikacija so baza i site CRUD operacii
+SEKOGAS ON PRV bazata i domainot gi sodrzi
+
+abstract class ni treba ako imame isti porperties site modeli

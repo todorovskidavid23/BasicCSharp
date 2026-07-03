@@ -29,3 +29,10 @@ prirodna sintaksa na html so atributi
 
 tag hrlper
 <form asp-action="" >
+
+View so prakjanje so View model e najobar nacin najmoderni nacini za isprakjanje strukturirano so properties
+postojat i drugi nacini 
+ViewData  kako se isprakja podatovci vo view vo view se prakjaat obivni pvrednosti so key value ViewData["Message"]="Hello World"
+vo akcijata si se pisuva ova
+
+ViewBag
