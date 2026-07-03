@@ -11,4 +11,8 @@
     <Folder Include="Implementations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp.DataAccess\ToDoApp.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
