@@ -1,1 +1,63 @@
-Class02
+Class07_2
+
+Parametar Biding
+
+koga ocekuvame podatoci vo eden den model biding
+parametar biding koga imame obivni parametri kako sto se int ,string,double itn..
+
+se od ova imase biding atributi kako da go prezemame pravilniot 
+da prebara po id
+id se prima na povekje nacini:
+1nacin preku [FromRoute] znaci deka vo samata ruta koga imame parametar imame From Route po default ako nemam efrom route zatoa sto noviot .net avtomaski si prepoznava
+[HttpGet("{id}")]
+
+from query dodavame query string koga imame route
+localhost/porta/students/id? (nie otvarame query string key=value id=)
+
+kako se prepoznava vo View
+VO VIEW/STUDENT/INDEX
+
+so pomos na a tag kade sto asp-action="GetStudentsByIdWiyhQuery" tag helper kako da se zeme sega parametarot 
+asp-route-id="@students.Id"
+asp-route-ime_na_parametar=id to na toj student sekoj student si ima podatoci za nego vo
+is
+url se koristi 
+query za filtriranje so povekje parametri
+
+
+za da ne ni bidat vo viewto FirstName treba vo modelotVM da bidet so Display i kako sakame nie kako da ni izgleda
+
+
+asp-summary- all site greski site polinja ako se gresni site errori kje dade
+MODEL ONLY vrednost 
+==================================================================
+==================================================================
+da ne odi direktno
+domain service repository
+domanksi modeli ni bea todo status category
+repository koe sto imame crud operacii IToDoRepository da mozeme da imame specificna za toa todo repository
+dependency injection
+avtomatsko kreiranje na instanca, namesto vo servici ili ocntrollero preku interfaci, vo constructorot!
+namesto toa koristime depencedy injection preku constructor deirekt do Program.cs 
+=========================
+sledno bizins layer
+data access layer, domanski modli i komunikacija so baza t.e. repository
+biznis layer celosna biznis logika, mapperi,dto modeli,view modeli, servisot, implementation,
+prezentaciski layer controller i view
+
+se sto imame da gi izlistame site raboti sto gi ima
++ bara filter
+koga kje se prikaze 200 todo mora da imame todo tie samo sto mi se potrebmi 
+filtriranje po category i po status
+
+data accesslayer da imame takvo nesto vo baza
+ni treba todo tabela 
+si imame toa 
+imame li repository-imame
+dali go imame get all t.e. listanje na podatoci
+service nisto nemame implementacija!
+
+ni bara edna funkcionalnost
+getall so filtri
+
+TASK listanje na site todot so filteri po status i category

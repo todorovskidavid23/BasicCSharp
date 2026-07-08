@@ -1,4 +1,5 @@
-﻿using ASP.NET.Core.MVC.Class07.Models.Domain;
+﻿using ASP.NET.Core.MVC.Class07.Database;
+using ASP.NET.Core.MVC.Class07.Models.Domain;
 using ASP.NET.Core.MVC.Class07.Models.ViewModels;
 
 namespace ASP.NET.Core.MVC.Class07.Helpers
@@ -26,5 +27,20 @@ namespace ASP.NET.Core.MVC.Class07.Helpers
                 Phone = student.PhoneNumber
             };
         }
+
+        //nov mapper sto pretvora od viewmodel vo domanski model
+        public static Student MapToStudent(CreateStudentVM createStudentVM)
+        {
+            return new Student
+            {
+                Id = StaticDb.Students.Last().Id+1,
+                FirstName=createStudentVM.FirstName,
+                LastName=createStudentVM.LastName,
+                DateOfBirth=createStudentVM.DateOfBirth,
+                Email=createStudentVM.Email,
+                PhoneNumber=createStudentVM.PhoneNumber
+            };
+        }
+
     }
 }
