@@ -1,0 +1,259 @@
+Class07
+Model View Controller 
+Workshop sleden cas
+
+inmemory vo database ist rezultat dobivame
+
+pred workhop
+
+htmp helperi i tag
+potsetuvanje
+ nu pomagat kako da go izgradime nasiot html so mopos na c#
+html helperi gi vikame c# code vo table vo html element
+modern nacin
+tag
+nas html i plus atributi so aps-action i asp-controller
+
+Model Binding
+pobitni raboti dase zapamtat!!
+Avtomatizirano samo od Samiot .Net
+process na zemanje avtomatski pdoatoci od Samiot reqeueset
+avtomatki si prepoznava od koj parmaetar si zema podatok
+
+koga pravime fomra
+http request
+podatocite avtomatki si se sekoe propery samo si se raspoznava
+avtomatizirano prepoznavanje i zacuvuvanje e model biding
+
+razlicni nacini na zimanje na podatoci
+
+http request prakjame parametri mozeme od forma od query string ili stream, preku json data (vo web api)
+da se zapamti kavkvi parametri moze da se primat kakvi mozat da se 
+1.simple type prosti int,boolean,string,
+2.complext type vire model,dto model,domainski model Direktno zimame cel model
+kako se podeleni
+
+koa kje se kaze model biding toa e avtomatskoto prepoznavnje zemanje na Samiot http request
+da se izvlecat podatocite 
+koa kje se klikne SUBMIT gajgja hhtp request se pretvarra vo propery toa e model biding
+
+ako ne postoese model biding
+da se zemat podatocite porano: kje treba od samikot request da se zemat racno eden po eden so metodi request.FirsName
+request..... LastName
+request za Age 
+
+pozadinski si raboti Model bidingot
+kako se prepoznava
+mozeme da odlucime kako kje go zeme
+sakame da kazeme da zeme od forma od root parameter query string
+ako nisto ne mu kzeme samo kje si porepoznae
+treba da se nasoci od kade treba da se zemat podatocite
+
+i preku root i preku query na ista route povikani
+root parameter si se vnesvuva vo svojata routa
+zamisluvame deka ovde treba da se zemat dva podatoci eden query string
+Query String za filtriranje (web api kje ni treba filter na table so dropdown imame  FILTER sekoi od tie filtra gi dodavame vo query string)
+dopolnitelene string samo vo url
+pateka/domain/porta/controller/action/dopolnitelnoroot parameter/strgin se vika query string so pomos na ?
+/domain/porta/controllet/action/root_parameter
+vo samata root vo patekata
+query srtring SAMO VO URL se dodava
+ako imame ? togas imame query string
+treba da se popolni da si pratiem podatoci
+imeto na parmetarot sto sakame da go pratime id 
+sledno vrednosta = 4
+ako sakame da mu dodademe uste parametri && and name = David
+napravivme mehavina na model biding
+mozeme da zemame parameter od url i od query string
+
+ime_na_parametar=vrednost_na_parametar
+mnogu cesto se koristi za filtri inace kako route parametri si stavame
+
+
+=============================
+Parametar Biding
+
+=============================
+Model Biding
+se deli 
+
+parametar biding mapiranje na ednostavni tipovi string,bool,int
+kako kje se razlikuvaat parametar se koristi samo ako ni se potrebni mal broj na parametri
+ni e koga korisitme roota ili quert string parameter
+form ako ima dva parametri ako imame 2 ne sakame so modeli da se preopotavuva so dva parametri
+
+Model Biding pokompleksen del koga primame cel model
+http request parametri 
+cel model koga kje dojde
+
+web api FROM BODY - json
+FROM FORM preku - fomra
+
+pomalce parametri Parametar
+model Model Biding
+
+
+pirmeri si imame sega
+
+
+Biding Atributi
+kako kje znaeme avtomatski kje gi prepoznae polinjata
+koga gradime html sekogas name atributot Name sekogas ist kako propertito da bidat
+
+Biding atributi ne se pisuvaat sekogas , Samiot si prepoznava kakov atribut da si zeme 
+ne sme pisuvale , ama nekogas e potrebno
+doloku URLto ne e bas tocno napraveno togas ni se potrebni atributi
+
+FromBody doagja vo bodyto
+http request i http body
+json pustame i ocekuvame
+
+FromQuery atributot sto mu kazuvame deka kje zeme parameter od query stingot
+mora so ?
+
+FromRoute kje pusti preku route preku samata pateka
+
+FromForm za MVC delot nie mu kazuvame ovoj atribuot go dodavame parametri sto se prateni od korisnikot gi ocekuvam da gi pusti preku forma
+mora htmlot mora da bide vmetnat vo forma ,bidejki sme rekle FromForm ako nema site null kje bidat
+
+FromHeader delot kade sto se pravi http request na header i body e podelen
+se sodzri avtenitifkacijata Token nekoj 
+primer: log in, username i password stiskame login
+token stasuva i proveriuvame FromHeader go zimame tokenot dali userot iako mu se tocni dali ima nekakva zabrana korisnikot.
+VO Samiot Token moze da imam Role
+Propery Agent kakvo property
+
+Primer vo edna akcija da zemame od razlicni atributi FromQuery id FromForm Student
+preku query string koe id e za updatira namesto od route kje go zememe od query string 
+
+
+
+Data Anotation
+
+so pomos na data anotacija kazuvame pravila na samite modeli
+da napravime ogranicuvanja 
+znaci deka na start pred validacija so if 
+mozeme vo eden red da e zavrsi, ima vekje gotovi anotacii sto se pisuvaat nad propertyto
+vo vie modelite i dto modelite
+zatoa sto tie modeli gi koristime za prikaz na korisnikot 
+
+ako vo student modelot vo view modelot imame FullName nema da bide dobro
+zatoa se praktikuva vo view modelite i dto modelite
+
+[Required]
+[StringLength]
+[Range]
+[Compare]
+[EmailAddress]
+[RegularExpression]
+[DataType]
+
+Validation on ViewModels
+public class RegisterViewModel
+{
+    [Required]
+    [EmailAddress]
+    [Display(Name = "Email")]
+    public string Email { get; set; }
+
+    [Required]
+    [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+    [DataType(DataType.Password)]
+    [Display(Name = "Password")]
+    public string Password { get; set; }
+
+    [DataType(DataType.Password)]
+    [Display(Name = "Confirm password")]
+    [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+    public string ConfirmPassword { get; set; }
+}
+
+Validation on Domain Models
+
+public class Product
+{
+    public int Id { get; set; }
+
+    [Required]
+    [StringLength(100)]
+    public string Name { get; set; }
+
+    [Range(0, 999.99)]
+    public decimal Price { get; set; }
+
+    [Required]
+    public string Category { get; set; }
+}
+
+
+Requered znaci deka e zadolzitelno, za zapisuvanje vo baza
+Mora toa propery da ima vrednost
+
+Data Anotacija za Email [EmailAddress] nie proveruvame dali vo poelto email e pravilno napisano
+[Display(Name = "Email")]
+Nie mu kazuvame kako da izleda namesto ConfirmPassword da se PRIAKZE kako da se PRIKAZE na korisnikot Confirm Password !
+
+Ogranicuvanje da se dade kolku min kolku max karakteri da ima
+[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+ClientSide ako imam 5 karakteri da se prati ErrorMessageot od ovde
+sekoe propery si sodzi svoja poraka
+
+Compare Data annotation znaci edka moze da napravime sporedba so drugo property od Samiot model
+poprty password treba da bide isti so vrednosta 
+[DataType(DataType.Password)]
+[Display(Name = "Confirm password")]
+[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+public string ConfirmPassword { get; set; }
+
+
+
+
+DataAnotacija se dopolnitelna porverna na ServerSide Proverki
+ako prosle od front end i vo backend proveruvame
+PostMan se koristi direktno apito da se piongaat.
+
+Dopolnitelna proverka da imame 
+
+
+
+Model State e gotova klasa sto vo nea sorzi IsValid
+kako raboti, dokoku imame data anotacija
+
+vrednostite se cuvaat vo model state
+kako student iako se gresni vrakja view da mu stojat podatocite 
+samo sto vika deka ne e validen age ima error message
+vo viewto imame forma so pomos na html tag helper mozeme da ja izvadime sto se naogja vo data anotacijata
+so pomos na kje se izvadi i kje se prikaze deka na toa pole ima greska
+MNOGU VAZNO
+<span asp-validation-for="FirstName" class="text-danger"></span>
+
+na sekoj request pak si proveruva red po red
+
+[HttpPost]
+public ActionResult Create(Product product)
+{
+    if (ModelState.IsValid)
+    {
+        // Save the product to the database
+
+        return RedirectToAction("Index");
+    }
+
+    return View(product);
+}
+
+dali ima vrednost FirstName
+dali ima vrednost LastName
+dali ima vrenost email i dali e pravilno napisano so @
+
+
+kreirame class
+instalirame nuget package
+da nasleduvame od 
+vo nego vklucuvame dto model view model
+
+namesto data anotacii se se pisuva ovde x.Name property na x.FirstName.MaxLength(10)
+ako imame povekje klasi
+
+
+
