@@ -1,0 +1,103 @@
+Class 0
+komunijkcija so realna baza
+so vistinki podatoci tabeli vo baza
+kje stane vistinka baza toa sto kje kreirame
+kako se kreiraat bazi
+kako se povrzuva so kodot
+sto e database first vs code first
+
+Entity Framework Core Najnov entity framework
+komunikacija so baza
+da se napravi komunikacija so baza potrebno ni e komunikjacija
+da bide ostrvarena ili vrzena ni e EF bilioletka sto se koristi za pretvaranje na samiot c# kod vo sql
+so pomos na ef ja gradime komunijacijata so baza
+ne zamenuvame baza samo ja pravime celosnata komunikcija
+namesto da pisuvame sql query, nie sve toa pravime so c# objekti so pomso na EF kje go prevede vo SQL query sto ne go gledame 
+za nas kje ni kreiraat takci queryinja
+biblioteka za komunikacija ,dodavame vo baza, CRUD operacii
+DIREKTNO PREKU EF
+EF e ORM object relational mapping od c# preveduva mapira vo sql query
+object se c# objekti (student,course), Relational relacijata so baza (pretvaranje vo sql query objekt vo qery), Mapping (c# objekt kje go mapira vo samata baza)
+znaci deka vo baza sto go pisuvame select * pisuvame so LINQ oznacuva sql query kje go vikame LINQ
+
+
+Domanski model vo baza
+C# clasite kje ni bidat tabeli 
+
+ORM OBject Relational Mapping
+toj ja vrsi celosnata komunikacija so baza
+ORM framework toj ja vrsi celosnata komuiniacija so baaza
+c# ovjketi vo sql query
+2 tipa na kjreiranje na baza POVRZUVANJE
+FIRST CODE = prvo pisuvame c# code kreirame domaniski klasi od domanski modeli vo tabeli pripery se koloni
+DATABASE FIRST = kreirana e gotova baza, 
+SCAFOLDING eve ja abelata zemi mi se stavi mi vo c code
+zema taveli sql query gi mapira i pretvara vo c# objekti i pravat 
+Courses iskaca Class Courses
+
+Domainski model pravime Data Access za nas da funkcionira toa ne e avtomatski za toa ni treba NUGET Package za da pomofnat da naracime celosna komunikacija
+BIBLIOTEKA namesto racno edno po edno query da pisuvame, kje piseme c# code kje napravi sql code toa e Entity Framework
+go instalirame tamu kajde sto ni e bazata t.e. vo Data Access
+
+static baza so vistinska baza
+tamu ni se repo i sve treba da go isntalirame nuget package PRVO DA SE KONFIGURIRA
+NUGET Package SQL SERVER NI TREBA oa inslairame,
+korsitime za pisuvanje komandi
+=========================================================================================
+sakame da imame dve tabeli vo baza
+Courses i Student
+da se izlistaat studenti koj ni se acive courses
+POCNUVAME SO DOMANSKI MODEL SEKOGAS!!!!
+ako beze vise kreirana bazata treba dataaccess pak kje treba so domanski modeli
+
+FIRST CODE RABOTIME
+tie modeli sto kje ni bidat nas modeli
+
+COurse class kje ni bide tabela a propertysot kje ni bidat koi koloni vo baza
+imame dve tabeli so properies 
+SLEDEN CEKOR KOGA KJE SE NAPRAVAT DOMANSKI MODELI PRAVIME DATA ACCESS
+
+Glaven DEl
+folder pravime Data Access 
+komukacija so realna baza PREKU Entity Framework
+EF stoi pomegju BAZA i C# kod
+pisuvame C# kod odi do EF preveduva vo SQL se dvizi vo data baza na samata relaciona baza MOST POMEGJU C# kod i SQL
+NE MOZE DIREKTNO 
+ne go menuvame sql delot samo pisuvame C# kod sto za nas EF si go preveduva vo SQL
+OD C# VO 
+C# NE RABIARA BAZATA RAZBIRA SAMO SQL
+===================
+sleden del instalirame NUGET PACKAGE nas ni e potreba clasa specificna classa glavna za komukacija so bazata
+DBCONTEXT
+glavna klasa sto vnatre se naogja celosnata komunijacija so bazata
+bez dbContext dzabe imame ef i nuget
+Glavna klasa sto vrsi komunikcija so baza
+so nea kreirame tabela velceme podatoci CRUD OPERACII
+DbContext se vrski komukacijata da se zemat ite podatoci treba da napravi sql query az da se napise toa ni treba LINQ preku dbcontex
+vo taa class vnatre pravime tabeli koi propery , po default si znae direktno da se prevedat no sakame da imame nekoe pole required da ne smee nullable, ne smee karakteri da bide pod 100, se toa mozeme vo toa MORAME VO DBCONTEXT
+KOMUNIKAIJAA SO BAZA SE ODI PREKU EF GLAVNATA KOMUNIKACIJA SE VRSI VO DBCONTEXT
+KAKO SE DOVIVA KOM SO BAZA?
+SO POMOS NA EF SO CLASS DBCONTEXT
+KREIRAME CLASS  : NASLEDUVA OD DBCONTEXT  
+se imenuva DemoDbContext
+ime_na_aplikacijaDbContext
+
+SLEDNO ISNTALIRAME NUGET PAKET STO SE VIKA 
+NA CEL SOLUTION ADD NUGET PACKACE
+EntityFrameWotkCore + SqlServer + Tools (ovozmozuva da kucame komandi sto kje ni dava ZA KOMANDI NI TREBA TOOLS)
+nie koristime sql server odnostno koristime sql server za komunikacija so baza sto korsitime sql server kostistime
+VAZEN DEL
+kora verzija se isntalira na micrsofotFC istata treba i na SqlServer
+
+=====================================================================
+Migracija e sekoja probmena na domanski model da ja pretvorime vo sql query
+pravime migracija
+za da se napravi kako baza se pravi preku terminal so pomos na komanidi
+Tools nugetPachage manager
+
+57red vo DemoDbContext
+modelBuilder.Entity<Course>().HasData(courses)
+listata sto sakam da ja zapisam
+koja tabel da ja kongigurira i koi podatoci da gi zapise vo baza od (courses i students)
+
+Add_Init_Seed
