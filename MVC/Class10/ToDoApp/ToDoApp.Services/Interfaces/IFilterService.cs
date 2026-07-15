@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ToDoApp.Domain;
+using ToDoApp.Models.Dtos;
+
+namespace ToDoApp.Services.Interfaces
+{
+    public interface IFilterService
+    {
+        List<StatusDto> GetStatuses();
+        List<CategoryDto> GetCategories();
+
+    }
+}

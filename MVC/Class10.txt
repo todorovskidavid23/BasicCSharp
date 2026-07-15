@@ -1,0 +1,20 @@
+Workshop Class10
+listanje na todos - Done
+za pravenje:
+da moze da kreirame novi todo
+kopce za mark completed
+filtriranje na Tabela, sekade kade sto se koristi po category i po status 
+dva dropdowns
+todo statsu category
+
+sleden cekor pravenje na filter
+logika kako da bide izgraden toj filter
+
+so service-ot get all status i get all category da gi pustime do view i tamu da se popolni dropdown
+
+
+FirstCode
+si imame modeli 
+tie modeli treba da se pretborat vo tabeli
+DataAccess komunikacijata treba da bide tamu
+za da se ukluci EF treba nugetPackets
