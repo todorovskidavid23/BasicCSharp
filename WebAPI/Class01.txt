@@ -1,0 +1,66 @@
+Web API
+
+////**\\\\
+everse engineering
+c# vo baza Code First
+od baza vo c# Database First reverse ingindeering scafolding dbcontext
+ORM stands for Object-Relational Mapping. It is a programming technique 
+that lets developers interact with a relational database (like MySQL or PostgreSQL) 
+using the object-oriented code of their preferred programming language, 
+rather than writing raw SQL queries
+
+API
+Application Programming Interface
+web api Web Aplikacija hosirana na server, so tip na podtok so pomos na HTTP 
+hostirana na server
+TIPOT NA PODATOK STO GO OPSLUZUVA
+za razlika od web strani ni davaat html document,
+
+MVC 
+Server Rendenr Page 
+na serverot se gotvi html.js
+i go doibvame kako static file SVEZIVEE NA SERVEROT
+Staticka strana se e BACKEND 
+API- web Aplikacija i sluzi za toa da ne oplsuzi so nekoja data .json najcesto no i .xml
+kako da se pristapi so HTTP povici
+
+QUERY PARAMETRI .INCLUDE
+web api !!! ista data API BAZA HTTP REQUEST DO API GO PIRAKUZA NA MOBILNA APLIKAIJA
+
+REST Respresentaional State Transfer Arhitekturen stil za gradenje na web api
+SET na pravila da se ispolnuvaat za da bide REstApi
+klient od server gi dvoi za
+.JSON api so server i .xml 
+REST vika sekoj result treba da bide da gi zapazi ovie 4 http 
+ako saka da vratime useri ni treba GETALL ENDPOINT GETBYID po id gi vrakja POST ENDPOINT USERS
+spored verb glagolot kje stineme do akcijata
+
+CLIENT ACNOSTIC aknostic
+edno api se vika od sve si raboti so API
+
+API SO API se povikuva bez CLIENT si imaat end point 
+AWanToGo 
+SCAN device id so account David uclock device 
+aplikacija na mobilen e CLINET ousta request od mobilen do API sto e hostirano negde i dava komanda na device sto e doma
+POSREDNIKOT SE VIKA IoT POSREDNIK Internet oF Things IOT Hub e softwer sto mendazira hardware, dava komanda sto slusa na nego
+
+OpenAPI Swagger alatka za DOKUMNTIRANJE so api
+contracted fornt so back alatka za DOKUMETIRANJE NA API
+citanje na site controlleri i akcii
+imas pet controller imas POST akcija so /pet
+PUT akcija
+GET /pet/findByStatus
+
+
+
+biten moment vo rabotenje so APInja
+SO controllers
+vo pogram.cs routirame ako ne sme so controllers
+development
+staging
+production
+
+ne rakja html tuku JSON
+
+akcija Get()
+vo ulr /GetWeatherForecast
