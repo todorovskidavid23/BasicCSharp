@@ -1,0 +1,208 @@
+osto web api e web aplikacija?
+za da go pristapime morame da komunicirame so HTTP response , koi http e soobrakjaj so webot 
+web api e web aplikacija povik asocira na api mora HTTP povik
+http request.
+a api-to e response vo forma na JSON
+apito e web api bez UI, tuku e nameneto da opsluzuva so nekakva data!
+
+web bez ui nema VIEW odgovorot kade moze moze da se prikaze bilo kade
+se moze da komucira so api ako znaeme http request i response
+
+Prviot Topic Controllers
+
+Controllers and Actions
+Fokus na Request Response Route
+Controlleri posrednik za kontroliranje preceka http da prosledi do ostanatiod tel na servicite da bide obraboten i da vrati tamu kade sto mu treba HENDLA sekoj http request i dava response
+
+osven sto se odgorni da primat i vrakjaat na view 
+VO WEB API nemaat focus da vrakjaat view, tuku da isprocesiraat i da pratat data vo JSON file
+prosleduvaat pakuvaat i prakjaat response.
+
+akciite i tuka se public metodi sekoja metoda sto e public i e markirana so http verb e endpoint na naseto api
+akcijata moze da vrati status code, objekti, file, error RESPONSE ActionResult od T genericki dzozvoluvaat razlicni http responses.
+
+Api controlleri se nalseduvaat od ControllerBase Class i ima [apicontroller]
+sekoja akacija e endpoint
+return view ovde ni e return OK
+ne vrakja view tuku vrakja status code opis kako pominal requestot.
+
+vrakjame response no such user vrakjame NOT FOUND /api/user/150  go nemame , ne mozeme vizuletno mora vo response da spakuvame status code NOT FOUND 
+
+
+Routing
+ koga rabotime so webAPI mnogu bitno od routiranjeto kje se naogjame vo naseto api ako e dobro togas lesno kje bide apito,
+datata sto se dobiva zavisi od rutata
+
+sekoj unique URL mapiran vo akcija se vika ENDPOINT
+
+SEKOJA AKCIJA ENDPOINT mora da pisuvame kakov tip e ako ne 
+
+SAMO EDNA AKCIJA ne e kako MVC dve bidejki nema VIEWS
+1get
+1edit
+1delete
+bidejki nemame views
+
+razlika POST akcija 
+Post akcija
+vtoro data za endpoint
+avtomatki
+koja klasa odi
+bind so clasa
+Posebni strings kako query parametars, post povik ne e dobro preku query strings
+
+podobro e post povik
+Bind vo code
+Podobro e so model nego so separativni 
+
+Controller Routing
+odogvora Route["api/] TOKEN ili STRING VARIABLE
+imeto na controllerot api/users/IME_NA_AKCIJA
+
+ACTION ROUTING
+HTTPGET GET("Names")
+
+
+bitno id id UserId 
+
+[HttpGet("{id}/books")]
+knigite za ovoj User id ustvari\
+
+
+
+integer i integer
+vo url sakame da imame string
+za da ne se sluci ako ne moze da stavi string
+deka parametar variabla se userid:int
+
+
+
+KAKOV SHABLON IMAME STO OCEKUVAME KAKO RESPOND SCHEMAS SE TIE
+kakov kod da ocekuvame so ovj get endpoint
+
+ZA DOKUMENTIRANJE NA API
+
+na masa imame klucevi
+kluc od vrata, kluc od plus, kluc imbus
+daj mi go klucot
+tiop e ist site se KLUCEVI
+ama namenata im e razlicna
+mora da se kaze nekoe dopolnuvanje daj mi go klicot "od vratata"
+
+tipot na requestot e Get
+
+Route e najvazno
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+Request - Response
+
+sto e request i sto response
+HTTP (HyperText Transfer Protocol)
+drugi protokoli: FTP protocol File transfer protocol, 
+osnoven protocol e HyperTextTransferProtocol
+
+se pusta request od sto se sotoi
+
+sostaven del od sekoj request:
+HTTP methods - sekoj request si sodrzi TIP get,post, put,patch, delete.
+Headers - doobrasjnuvanje na request plus Useragend,assetlagnuage kakov tip na jazik, authorization, content-type, text, json, Request Line, HTTP METHOD, URL, HTTPVERSION (GET /hello.htm HTTP/1.1)
+Body (opconalno) za get ne ni treba deka vika samo DAJ MI
+a za POST ni treba 
+
+Example - GET Request
+
+GET /hello.htm HTTP/1.1
+User-Agent: Mozilla/4.0
+Host: www.mywebapp.com
+Accept-Language: en-us
+Connection: Keep-Alive
+
+
+Example - POST Request
+
+POST /hello.htm HTTP/1.1
+Host: www.mywebapp.com
+Content-Type: application/json
+Content-Length: 205
+
+{
+  "users": {
+    "firstName": "Bob",
+    "lastName": "Bobsky",
+    "address": {
+      "street": "21 Bob Street",
+      "city": "Bob York",
+      "postalCode": 101010
+    }
+  }
+}
+
+
+
+Response 
+
+Status Code
+Headers
+Body
+
+
+Example - HTTP Response (200 OK)
+HTTP/1.1 200 OK
+Date: Mon, 27 Jul 2019 12:28:53 GMT
+Server: Apache/2.2.14 (Win32)
+Last-Modified: Wed, 22 Jul 2019 19:15:56 GMT
+Content-Length: 88
+Content-Type: text/html
+Connection: Closed
+
+<html>
+<body>
+ <h1>Hello, World!</h1>
+</body>
+</html>
+
+Example - HTTP Response (404 Not Found)
+
+HTTP/1.1 404 Not Found
+Date: Sun, 18 Jul 2019 10:36:20 GMT
+Server: Apache/2.2.14 (Win32)
+Content-Length: 230
+Connection: Closed
+Content-Type: text/html
+
+
+Status Codovite se podeleni na kategorii 
+Description za responseot - sto se ima sluceno so responseot
+
+First digit – Represents the status category.
+Second and third digits – Represent the specific result.
+
+1xx status category informational
+2xx success
+3xx redirection
+4xx client error
+5xx server error
+
+
+400 Bad Request greska vo urlto primer sapi/ mesto swapi/
+
+
+REST
+STIL NA DIZAJNIRANJE NA API
+vika deka apito treba da propisuva nekavi raboti
+default da e get /notes 
+rest vika routa sto kje bide byId
+
+
+
+za da ozovmozime streamreader vo requestot treba vo Program.cs
+// In order to allow the request body to be read multiple times,
+// we need to enable buffering for the request body.
+builder.Services.Configure<KestrelServerOptions>(options =>
+{
+    options.AllowSynchronousIO = true;
+});
+
+Postman za pustanje na http requesti
+
