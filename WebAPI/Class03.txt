@@ -1,0 +1,93 @@
+Controleri i Actions
+NotesApp-
+bitno ako definirame na eden endpoint
+Vazno e za HTTP VERB
+ne se UI 
+POST END POINT za da se prati treba POSTREQUEST PUT,DELETE
+Gradenje na api najvazno e specificiranje na nasi ruti , poednostavno se korsiti naseto api1
+
+
+Bind na modeli i parametri
+za query parametar parametrti sto se prosledni vo urlto e ENDPOINT kade sto se slucuva
+vo samotot url odgjaat sekogas na krajot posle ? i so key=value, gi redime query parametri
+?name=David
+so & ako sakame uste nesto ako sakame da dodavame
+
+dogs?type
+controlerotFIlter=good+boi
+query parametar valueto e so povekje zborovi togas + primer good+boy ENKODIRANJE NA SITE SPECIJALNI KARATERI
+Encoding url characters ONLINE
+space %20
+
+Path Variables
+ne se qury varabli tuku path bariabli
+gi ocekuvame vo routata
+aoi/dogs/good
+rutata da sorzi good vo nea
+
+HttpGet("good") del od routata ne e qury parameters
+se definiraat vo samata akcija na controllerot
+
+opis  n arouta /api/users/5
+PATH VARIABLA
+
+
+MODEL BINDING- GLAVNO
+koga praviem POST request put request za daispratat data vo apito
+so request class vo api contrtoller i taka se pravi 
+nacin na bindanje na podatok kako MODEL.
+Forma za dodavanje na korsinik ne treba kaoko query parametar
+tuku kje bajdame za nekakov model vo bodyto kje go porsledime vo apito
+
+AVTOMATKI se vrzuvaaat porpertsot od bodyto so proepry od model st ocekaat od requestot
+vo bodyto Firstname:"" isto da se imenuva vo bodyto na requestot.
+
+od body od the reqeust
+the query parametar
+route parameters
+header of request
+
+FROM BODY
+[FromBody] pomosen atribut soodveten atribut od kade se ocekuva
+post i put reqeust
+
+[FromQuery] od kade da ja ocekuva datata
+ako imame primer post povika na notes?text=Buy+Milk&color=green&tag=Low
+specificirame koja data od kade da ja ocekuva ako ne navedeme e najcesto anze ako imame Model Note note kje si signe kako body
+ako imame variavli string text, ne gi ocekuva od body tuku kako qury parametri
+Name="tag"
+DISTINKCIJA DA NAPRAVIME !!!!
+
+
+[FromHeader]
+moze da se vadat od requestot
+Request.Body i Request.Header
+Snapshot od reqeustot
+string sot kako parametar ako en se navedde kje bide query parametar MODEL GO CEKA BODY, INT<STRINT gi cekako kako qury strings
+
+MEtadata extra data za nesto
+
+Dta bidnig se bidna sona povekje nacini qurypara path variabla fromqury frombody fromheader
+
+
+
+Alatka za dokumentiranje na API e SWAGGER
+gi oposuvame nasite endpointi
+
+Postman e alatka sto se konfigurira da se isntalira /backle 
+alatka imame kako Postman pokoristena, swagerot e api related
+postamn e alatka MOZE DA GO TESIRA KOE BILO API
+aplikacija nameneta za prianje i prakjanje http reqeust
+lesto se submitnuva body,qury
+
+sve e ovozmozeno preku postamn
+API testovi se kucaat, da se pravat manuelno testovi se klika i se proveruvaat site endpoitni
+
+KONZUMIRANJE NA API E POSTMAN
+
+Dokumentacija na API e SWAGGER
+development alakta sto ja imamee na development ne vo pordukcija
+
+MORA POSTMAN
+
+DOKUMENTIRANJE I TESTIRANJE
