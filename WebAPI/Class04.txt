@@ -1,0 +1,151 @@
+DOGOVOR contract so endpoint e toa interface API
+so HTTP request
+contract so adresi do adredeni resursi
+za razlika do MVC
+klientot se naogja VIEW
+ne e ograniceno moze da opsluzuva
+
+islustracija so sto moze da Klientot moze da bide bilo sto smart ured, uste edno api, mobilen telefont, bili sto
+benefit sto e biten
+imame jasen separation of concerns 
+pocebno si e front i back , zasebni aplikacii se
+
+Rest API
+nacin na dizajniranje na naseto api ima i drugi vakvi konvencii za modelirani PRAVILA po koi gradime svoe api
+SPOREDBA POMEGJU REST and SOAP APIs
+SOAP e protocol Simple Object Access Protocol
+HTTPQuery najdovo izlezeno June2026
+
+Http povici HyperText Transfer Protocol
+Nacin na komuniciranje na WEB
+klintot isprakja reqeust bara nekakov resurs verb,header,body
+ima headers meta podatoci sto se potrebni da se isporcesiraat
+treba da se ispratat tie podatoci
+preku koj del od http reqeust se irspakjaat preku BODYTO 15 minuta 
+
+ili payloat razbovorno se upotterbuva JSON format 
+
+ako treba nesto da se ZEME a treba da se isprati vo body FILTER treba da se isprati a ne e preku query parametar 
+
+
+Response
+Status Code
+Headers
+Body
+kako go vrakja response 
+Status Code- konekcijata kako pominal requestot vrakja status code
+toj sto go pravi povikot nesto ne e vo red BadReqeust 400
+Server Error 500 server Error Internal Server
+
+
+Model biding
+
+
+
+launchSettings.json
+endpoint na apito
+za lokalno 
+
+appsettings.json
+connection string, congifuration, 32minuta 31minuta
+
+NotesApp.http
+glupi Postman
+vid na dokumantacija za site endpointi sto gi dorzi na svoeto api
+
+Program.cs 
+Entry point na aplikacijata
+deifirame sto e aplikacijata
+kako funkcionira
+registriranje na servici, dependicies
+pipeline
+cela configuracija aplikacijata
+
+
+Controllers
+sto pravi api controller
+sto se Atributi [] se za atributi
+[ApiController]
+site tie se ATRIBUTI
+
+serve http api responses
+
+CLASS vo funkcija za api controller opsluzuva api 
+kje si imame plus funkcionalnosti 
+
+mnogu vazno ControllerBase
+
+Route routiranje url do resurs
+route se stava samiot controller
+api/controller
+pateka do odreden resurs
+
+Akciite se ENDPOINTS 46minuta
+
+Name""
+
+SOLID Principle
+Solid principles VAZNI
+
+Client-Server
+Stateless - pustat request i toa e toa dovolen si e sam od sebe ne treba niso da se sledi nema session
+Cacheable 
+Uniform interface
+Layered system
+Code on demand(optional)
+
+--------------------------------
+
+Ubava Arhitektura
+You can change one layer without 
+Service layer za logika
+DataAccess database
+Unit testiranje
+
+sto e bitno za samata arhitektura
+pravilata sto od sto moze da gleda
+Dali ima logika vo data access da imame logika kon apito
+Data access layer 
+
+HttpRequst -> Api Controller -> Services -> Data Access -> StaticDb 
+data access ne go interesira za Servicesot ,
+error kje dade CROSS REFERENCE nema da dozvoli 
+
+
+Dtos Data Tranfer Objects go prepakuvaat Modelot vo toa sto ni treba vo sericen model
+View model 
+Dto moze pomegju MVC da si komunicira dali service layareto ne mu e potreben A NA CONTROLLEROT MU E POTREBEN VIEW MODELOT
+pomegju e so DTO
+
+najcesto ENTITY FRAMEWORK trakiranje Proektiraat
+e vikaat * from useri 
+tuku toa sto mi treba FirstName, LastName 
+toa mapiranje se pravi so LINQ toa e vo DTO model
+MVC si se maprira vo VIEW MODEL
+
+treba da se ima osobeno 1:1 presentaion i na frint end client ni treba istata classa
+
+abstract se naseleduva
+ne dava da se koristi 
+od ovaa clasa se naleduva
+
+42 минута за init nesto
+
+Pattern za DataAccess
+IRepository
+genericko repository
+repository pattern pomaga za sekoj domain si imame posebno repository clasa so metodi za kreiranje na podatocni source
+CRUD operacii
+DESIGN PATTERN E
+kako da resis nekoj problem
+
+CRUD operacii posebno genericko 
+
+Depencedy injection
+sto e na class se ona sto e potrebano na klasa za da funckionira
+Na notes controller INotesService i NoteSevice
+
+za da ne pravime new NoteService();
+ova e za vo Controllerot NotesController
+avtomatki da go injetira vo program.cs
+
