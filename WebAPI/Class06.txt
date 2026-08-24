@@ -1,0 +1,109 @@
+Class06
+Entity Framework 
+
+Entity Framework
+object-relational mapping (ORM)
+ORM mnogu vazno da se znae
+
+benefits 
+SQL server
+SQL SERVER 
+kontrola vrz samite tabeli 
+BENEFIT:
+Maperot tabelite da gi mapira vo C# klasite
+avtomatki si se mapira od tabelata vo modelot
+
+kreirame modelite DbContext i so pomos na migracii 
+SITE PROMENI VO DBCONTEXT EVIENCIJA ZA SITE PROMENI SNAPSHOT
+
+NugetPackets
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Tools
+
+Code First
+CodeFirst Kreirame klasi domain modeli konifufirame i pravme databasase
+DatabaseFirst , gotova databaza od SQL od nea treba da gi izvleceme modelite
+koga migrirame nekoj si proekt vo nekoja nova verzija 
+Scaffold-DbContext
+generirame klasi icontext od postoecki databazi
+tehnika na osvonva na nesto generirame klasi 
+
+Vo NugetManager paste na linkot i se pravi Domain 
+
+FLUENT API vo APPDBCONTEXT
+
+Sto ni treba posle sevo ova sot ni e potrebno
+-da go registrimame kako so builder.Services.AddDbContext vo Program.cs
+
+NULL VRAKJA ZA CATEGORY I STATUS
+treba .INCLUDE a toa e ustvari JOIN
+
+
+kako moze da vidime koe query kje se izvrsi vo baza
+vo output OUTPUT DOLE ZA DA PROVERIME SO STO RABOTIME
+moze da se vidi sto e problemot 
+
+
+500 error deka pomegju sebe so se prikacuvaat .
+pravat problem, ima LOOP zaradi toa dava error
+
+kaj AddControllers vo Program.cs
+pod addcontrollers
+.AddJsonOptions(options=>options.JsonSerializerOptions.ReferenceHandler=ReferenceHandler.IgnoreCycles)
+
+Snapshot momentalnata sostojba na bazata
+
+
+
+sega Code first so NotesApp
+
+Sega imame vo Domain
+ne sakame so StaticDb da rabotime
+
+1.instalirame 3 te nuget packets
+2.vo dataaccess pravime DbContext
+  2.1
+public NotesAppDbContext(DbContextOptions<NotesAppDbContext>options) : base(options)
+{
+
+}
+    public DbSet<Note> Notes { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+
+protected overrde void OnModelCreating
+ 2.2 gi konfigurirame modelite bo OnModelCreating
+dva nacina ima ovoj e poznat so OnModelCreatinh 
+1. SO POMOS NA FLUENT API (NAJCESTO)
+celata kofiguracija se pravi vo onModelCreating 
+postoi drug nacin so pomos na 
+2. DataAnptacii ATRIBUTI 
+1 i 2 moze i konbinacija
+
+so modelcreating pravime
+
+sto se User i UserId
+userid e foreign key (pokazuva vo )
+koj user e na toj note
+mora da se pravi takva relacija ovde
+Relacijata e 1 : N
+eden user moze da ima povekje notes
+Note e many => 1 e user
+
+Lazy avtomatski
+eden tag moze da ima povekje notes
+i eden notes moze da ima povekje tags
+
+TREBA DA SE IMENUVA  NoteTag
+id na note i id na tag
+
+
+
+sega so data anotacii
+zosto ne e preporaclivo , koga kje se otovri modelot samo properties da ima da nema premnog logiki
+da nema validacija i konfiguracii
+ATRIBUTI
+
+
+DESIGN SE SIMINJA I VO WEB delot
