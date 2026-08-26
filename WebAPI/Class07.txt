@@ -1,0 +1,52 @@
+Class07
+
+Modeli DbContext, relacii, 
+entiteti dva modeli eden e 
+Fluent API so many to many realcia so pomos so megjutabela
+i so Data Anotacii ili Atributi
+
+posebna extension vadime modelBuilder
+
+nedostatoci separation of concerns SOC
+======
+extenstion metodi 
+
+DbContext C# prestava za nasata databaza
+DbSet se tableite
+
+Planote e da prodolzime so Notes APP
+
+Task 
+BackEnd e multi threaded moze da se izvrsi na povekje mesta
+
+Asynchron i synhron
+Threads synhron go blokira threadot
+Threadot e blokiran 
+1thread ni e zafaten
+blokiran e threadot 1e zafaten uste 9 imame probuvame site da pristapime kon endpointot
+SYNHRONO
+ako dojde 11ti covek kje treba site da zavrsat za da mu opsluzi nego
+thread starvation
+thread e eden unit sto go izvrsuva kodot
+deka site cekaat da se zavrsi queryto vo baza
+
+ASYNHRONO
+sega kako funkcioniraat
+kako PROMISE 
+ceka da ima sloboden red soodveten task se izvrsuva vo nego, ako ima citanje od databaza
+nema da ceka da go trigrnre i se osloboduva, threadot se osloboduva,,,, koga kje se vrati responsot od baza
+
+\\\\\||{*}||/////
+
+if the method touches a database, network, or file make it async
+ne sakame da gi cekame threadovite
+
+///////////////////////
+
+IRepository 
+sekoja async task
+sekoja ASYNC vrakja TASK
+
+SVE SLEDI GI TRAKIRA
+SAKAME AKO POSLE TIE SE UPDATENAT A SAMO AKO GI PRIAKZUVAME NEMA POTREBA OD TRAKIRANJE
+.AsNoTracking()
