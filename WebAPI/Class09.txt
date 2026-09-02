@@ -1,0 +1,35 @@
+Class09
+
+Entity Frameworks Topics
+
+3 Temi
+Sto e trakiranje na Entiteetite, zosto se 
+IQueruable ; .AsQueryable
+koga se izvrsuva queryto vo baza
+i optimiziran 
+DIREKTNO VRAKJANJE NA DTO
+
+
+1.Sto e trakiranje na entiteti
+povrzano so .SaveChangesAsync();
+avtomatki znae deka ima promena vo baza
+ef ima mehanizam za solesnuvanje na entitetite 
+avtomatki vo pozadina gi prati modelite, pri SaveChanges, avtomatski gi prepoznava ptomeni i gi izvrsuva vo baza
+EF ESKOGAS ZAVRSUVAAT KAKO QUERY sto se izvrsuvaat vo BAZA
+.AsNoTracking() 
+koga vrakjame lista na modeli
+KOGA E READ AKCIJA OBAVEZNO D A SE STAVI .AsNoTracking();
+
+koga sakame da gi prikazeme podatocite da gi zemem i prikazeme koga nemane edit(UPDATE) 
+za read treba da kosistime AsNoTracking();
+
+
+IQueryable e momentot koga go gradime queryto
+koga gi koristime LINQ metodite GRADENJE NA QUERYTO POSTEPENO I KJE SE POVIKA KOGA KJE SE POVIKA
+koga imame so povik na ToListAsync, FirstOrDefault, FirstOrDefaultAsync, SingleOrDefault, ToList, Count, CountAsync
+(izgleda treba .AsQueryable(); pred ovie da se pisat)
+
+materijalizacija na query se uzvrsuva so ovie metodi sto se navedeni koga se cita okdot nisto se se pravi a se do onoj moment koga kje se povika ToListAsync()l togas imame promena vo baza
+toa si imame linq NI GO PREVEDUVA VO SQL
+
+Sekogas Select na nivo na baza za daprikazeme ustvari preku DTO toa sto treba od baza
