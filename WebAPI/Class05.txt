@@ -1,0 +1,21 @@
+Class05
+
+Middle wear na MVC
+
+NotesApp
+NotesApp.DataAccess
+NotesApp.Domain
+NotesApp.Mappers
+NotesApp.Services
+
+Redosledno NotesApp.Domain, NotesApp.DataAccess
+
+za akcija da se izgradi
+HttpGet Atribute so pomos na kakov request moze da se pristapi
+vrakja ActionResult Genericka klasa sto vrakja nekoj vid na IActionResult
+ActionResult se koristi koga vrakja token tip, ovoj endpoint ni vrakja Lista od nesto
+IActionResult 
+
+
+vo DTOS kreirame
+NoteModelot kje go mapirame vo ovoj Dto model narecen NoteDto
