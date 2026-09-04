@@ -1,0 +1,6 @@
+@EFDatabaseFirstDemoApi_HostAddress = http://localhost:5074
+
+GET {{EFDatabaseFirstDemoApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
