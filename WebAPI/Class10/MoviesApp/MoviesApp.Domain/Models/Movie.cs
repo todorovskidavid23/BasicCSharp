@@ -1,6 +1,4 @@
-﻿using System.Security.Principal;
-
-namespace MoviesApp.Domain.Models
+﻿namespace MoviesApp.Domain.Models
 {
     public class Movie : BaseEntity
     {
@@ -16,7 +14,7 @@ namespace MoviesApp.Domain.Models
         //The null-forgiving operator (!) is used to suppress the compiler warning about potential null reference.
 
         //1:M relation with Director
-        public int DirectorId { get; set; }
+        public int? DirectorId { get; set; }
         public Director? Director { get; set; }
         //Director? Director means that the Director property is optional and can be null.
 

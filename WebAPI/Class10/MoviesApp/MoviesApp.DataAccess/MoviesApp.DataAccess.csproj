@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MoviesApp.Domain\MoviesApp.Domain.csproj" />
+    <ProjectReference Include="..\MoviesApp.Dtos\MoviesApp.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

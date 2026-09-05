@@ -2,7 +2,8 @@
   <Project Path="MoviesApp.DataAccess/MoviesApp.DataAccess.csproj" />
   <Project Path="MoviesApp.Domain/MoviesApp.Domain.csproj" />
   <Project Path="MoviesApp.Dtos/MoviesApp.Dtos.csproj" />
-  <Project Path="MoviesApp.Mapper/MoviesApp.Mapper.csproj" />
+  <Project Path="MoviesApp.Helpers/MoviesApp.Helpers.csproj" Id="0014356c-bc6e-43ab-84f0-f43e47d7e224" />
+  <Project Path="MoviesApp.Mapper/MoviesApp.Mappers.csproj" />
   <Project Path="MoviesApp.Services/MoviesApp.Services.csproj" />
   <Project Path="MoviesApp/MoviesApp.csproj" />
 </Solution>

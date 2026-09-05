@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoviesApp.Domain.Exceptions
+namespace MoviesApp.Services.CustomExceptions
 {
     public class ConflictException : Exception
     {
