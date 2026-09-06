@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MoviesApp.DataAccess.Implementations.EntityFramework;
 using MoviesApp.DataAccess.Interfaces;
+using MoviesApp.Services.Implementations;
+using MoviesApp.Services.Interfaces;
 
-namespace MoviesApp.DataAccess.Helpers;
+namespace MoviesApp.Helpers;
 
 public static class DependencyInjectionHelper
 {
@@ -19,5 +21,10 @@ public static class DependencyInjectionHelper
     public static void AddApplicationServices(this IServiceCollection services)
     {
         // services доаѓаат во следните чекори
+        services.AddScoped<IMovieService, MovieService>();
+        services.AddScoped<IGenreService, GenreService>();
+        services.AddScoped<IDirectorService, DirectorService>();
+        services.AddScoped<IActorService, ActorService>();
+
     }
 }

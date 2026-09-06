@@ -17,11 +17,8 @@
   <ItemGroup>
     <ProjectReference Include="..\MoviesApp.DataAccess\MoviesApp.DataAccess.csproj" />
     <ProjectReference Include="..\MoviesApp.Dtos\MoviesApp.Dtos.csproj" />
+    <ProjectReference Include="..\MoviesApp.Helpers\MoviesApp.Helpers.csproj" />
     <ProjectReference Include="..\MoviesApp.Services\MoviesApp.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

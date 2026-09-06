@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MoviesApp.DataAccess.Data;
-using MoviesApp.DataAccess.Helpers;
+using MoviesApp.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
