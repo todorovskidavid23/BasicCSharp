@@ -33,14 +33,14 @@ namespace MoviesApp.DataAccess.Helpers
                 // Genre -> Movie (1:M)
                 entity.HasOne(movie => movie.Genre)
                       .WithMany(genre => genre.Movies)
-                      .HasForeignKey(movie => movie.GenreId)
-                      .OnDelete(DeleteBehavior.Restrict);
+                      .HasForeignKey(movie => movie.GenreId);
+                //.OnDelete(DeleteBehavior.Restrict);
 
                 // Director -> Movie (1:M)
                 entity.HasOne(movie => movie.Director)
                       .WithMany(director => director.Movies)
-                      .HasForeignKey(movie => movie.DirectorId)
-                      .OnDelete(DeleteBehavior.SetNull);
+                      .HasForeignKey(movie => movie.DirectorId);
+                      //.OnDelete(DeleteBehavior.SetNull);
 
                 // Movie -> Actor (M:M)
                 entity.HasMany(movie => movie.Actors)
